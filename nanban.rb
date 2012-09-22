@@ -14,7 +14,7 @@ class Event
 end
 
 # Persistance
-DataMapper::setup(:default, "sqlite3:nanban.db")
+DataMapper::setup(:default, ENV['DATABASE_URL'] || "sqlite3:nanban.db")
 DataMapper.finalize.auto_upgrade!
 
 # Controllers/Routes
