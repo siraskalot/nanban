@@ -1,7 +1,5 @@
-require 'sinatra'
-require 'data_mapper'
-require 'sqlite3'
-require 'dm-sqlite-adapter'
+require 'bundler'
+Bundler.require
 require 'time'
 
 # Models
