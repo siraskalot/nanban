@@ -5,8 +5,12 @@
   <li data-role="list-divider" role="heading">Done</li>
   <% @events.each do |event| %>
   <li data-theme="c">
-    <%= event.time.strftime("%Y-%m-%d %H:%M") %>
-    <span><%= event.type %>: <%= event.description%></span>
+    <h2>[<%= event.type %>] <%= event.description%></h2>
+    <p>Posted <%= event.time.strftime("%d/%m/%Y") %> at <%= event.time.strftime("%H:%M") %></p>
+    <form method="post" action="/event/<%= event.id %>">
+      <input type="hidden" name="_method" value="delete" />
+      <button data-role="button" data-icon="minus" data-inline="true">Delete</button>
+    </form>
   </li>
   <% end %>
 </ul>

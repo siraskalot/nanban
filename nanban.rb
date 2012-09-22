@@ -37,3 +37,8 @@ post '/new/?' do
       erb :new
   end
 end
+
+delete '/event/:id' do
+  Event.get(params['id']).destroy
+  redirect '/'
+end
