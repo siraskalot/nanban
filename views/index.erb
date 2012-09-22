@@ -1,0 +1,12 @@
+<p>
+  <a href="/new/" data-role="button" data-theme="b">New</a>
+</p>
+<ul data-role="listview" data-divider-theme="a" data-inset="true">
+  <li data-role="list-divider" role="heading">Done</li>
+  <% @events.each do |event| %>
+  <li data-theme="c">
+    <%= event.time.strftime("%Y-%m-%d %H:%M") %>
+    <span><%= event.type %>: <%= event.description%></span>
+  </li>
+  <% end %>
+</ul>
